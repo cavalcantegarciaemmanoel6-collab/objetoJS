@@ -1,0 +1,50 @@
+<html lang="pt-br" dir="ltr">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <title>Exercício 9 - Objetos</title>
+        <script>
+
+            var estoque = {
+                nomeProduto: 0,
+                quantidadeDisponivel: 0,
+                precoUnitario: 0,
+
+                solicitarDados: function() {
+                    this.nomeProduto = prompt("Informe o nome do produto: ")
+                    this.quantidadeDisponivel = Number(prompt("Informe a quantidade disponível: "))
+                    this.precoUnitario = Number(prompt("Informe o preço unitário: "))
+                },
+
+                adicionarProdutos: function() {
+                    quantidadeAdicionar = Number(prompt("Informe a quantidade que deseja adicionar: "))
+
+                    this.quantidadeDisponivel = this.quantidadeDisponivel + quantidadeAdicionar
+                },
+
+                realizarVenda: function() {
+                    quantidadeVenda = Number(prompt("Informe a quantidade que deseja vender: "))
+
+                    if (quantidadeVenda <= this.quantidadeDisponivel) {
+                        this.quantidadeDisponivel = this.quantidadeDisponivel - quantidadeVenda
+                        console.log("Venda realizada com sucesso!")
+                    } else {
+                        console.log("Venda não realizada. Quantidade insuficiente.")
+                    }
+                },
+
+                infosOrganizadas: function() {
+                    console.log("Produto: " + this.nomeProduto)
+                    console.log("Quantidade disponível: " + this.quantidadeDisponivel)
+                    console.log("Preço unitário: " + this.precoUnitario)
+                }
+            }
+
+            estoque.solicitarDados()
+            estoque.adicionarProdutos()
+            estoque.realizarVenda()
+            estoque.infosOrganizadas()
+
+        </script>
+    </head>
+</html>

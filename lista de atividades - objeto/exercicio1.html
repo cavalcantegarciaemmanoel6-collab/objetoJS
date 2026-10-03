@@ -1,0 +1,41 @@
+<html lang="pt-br" dir="ltr">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <title>Exercício 1 - Objetos</title>
+        <script>
+
+            var aluno = {  
+                nome: 0,
+                nota1: 0,
+                nota2: 0, 
+                media: 0,
+
+                dadosAluno: function() {
+                    this.nome = prompt("Informe o seu nome: ")
+                    this.nota1 = Number(prompt("Informe nota 1: "))
+                    this.nota2 = Number(prompt("Informe nota 2: "))
+                },
+
+                calcularMedia: function() {
+                    this.media = (this.nota1 + this.nota2) / 2 
+                },
+
+                situacaoAluno: function() {
+                    if (this.media >= 6) {
+                        console.log("Você foi aprovado!")
+                    }
+                    else {
+                        console.log("Você foi reprovado...")
+                    }
+                }
+            }
+
+            aluno.dadosAluno()
+            aluno.calcularMedia()
+            aluno.situacaoAluno()
+            console.log(aluno.media)
+
+        </script>
+    </head>
+</html>

@@ -1,0 +1,84 @@
+<html lang="pt-br" dir="ltr">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <title>Exercício 14 - Arrays</title>
+        <script>
+
+            var hospital = {
+                animais: [],
+
+                cadastrarAtendimento: function() {
+                    nome = prompt("Informe o nome do animal: ")
+                    especie = prompt("Informe a espécie: ")
+                    responsavel = prompt("Informe o nome do responsável: ")
+                    urgencia = Number(prompt("Informe o nível de urgência: "))
+
+                    this.animais.push({
+                        nome: nome,
+                        especie: especie,
+                        responsavel: responsavel,
+                        urgencia: urgencia,
+                        situacao: "Em atendimento"
+                    })
+                },
+
+                finalizarAtendimento: function() {
+                    nome = prompt("Informe o nome do animal: ")
+
+                    animalEncontrado = this.animais.find(function(animal) {
+                        return animal.nome == nome
+                    })
+
+                    if (animalEncontrado) {
+                        animalEncontrado.situacao = "Finalizado"
+                        console.log("Atendimento finalizado.")
+                    } else {
+                        console.log("Animal não encontrado.")
+                    }
+                },
+
+                buscarAnimal: function() {
+                    nome = prompt("Informe o nome do animal: ")
+
+                    animalEncontrado = this.animais.find(function(animal) {
+                        return animal.nome == nome
+                    })
+
+                    if (animalEncontrado) {
+                        console.log("Nome: " + animalEncontrado.nome)
+                        console.log("Espécie: " + animalEncontrado.especie)
+                        console.log("Responsável: " + animalEncontrado.responsavel)
+                        console.log("Urgência: " + animalEncontrado.urgencia)
+                        console.log("Situação: " + animalEncontrado.situacao)
+                    } else {
+                        console.log("Animal não encontrado.")
+                    }
+                },
+
+                ordenarUrgencia: function() {
+                    this.animais.sort(function(a, b) {
+                        return a.urgencia - b.urgencia
+                    })
+                },
+
+                infosOrganizadas: function() {
+                    for (i = 0; i < this.animais.length; i++) {
+                        console.log("Nome: " + this.animais[i].nome)
+                        console.log("Urgência: " + this.animais[i].urgencia)
+                        console.log("Situação: " + this.animais[i].situacao)
+                    }
+                }
+            }
+
+            hospital.cadastrarAtendimento()
+            hospital.cadastrarAtendimento()
+
+            hospital.finalizarAtendimento()
+            hospital.ordenarUrgencia()
+            hospital.buscarAnimal()
+            hospital.infosOrganizadas()
+
+        </script>
+    </head>
+</html>

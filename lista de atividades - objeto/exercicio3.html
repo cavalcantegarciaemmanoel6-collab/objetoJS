@@ -1,0 +1,45 @@
+<html lang="pt-br" dir="ltr">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <title>Exercício 3 - Objetos</title>
+        <script>
+
+            var contaBancaria = { 
+                nome: 0,
+                saldoConta: 0,
+          
+                solicitarDados: function() {
+                    this.nome = prompt("Informe o seu nome: ")
+                    this.saldoConta = Number(prompt("Informe o saldo da conta: "))
+                },
+
+                depositar: function() {
+                    deposito = Number(prompt("Informe o valor do depósito: "))
+                    this.saldoConta = this.saldoConta + deposito
+                },
+
+                sacar: function() {
+                    saque = Number(prompt("Infome o valor do saque: "))
+                    if (this.saldoConta < saque) {
+                        console.log("Não foi possível realizar o saque, saldo insuficiente.")
+                    }
+                    this.saldoConta = this.saldoConta - saque
+                },
+
+                exibirSaldo: function() {
+                    console.log("Nome: " + this.nome)
+                    console.log("Depósito: " + deposito)
+                    console.log("Saque: " + saque)
+                    console.log("Saldo da Conta: " + this.saldoConta)
+                }
+            }
+
+            contaBancaria.solicitarDados()
+            contaBancaria.depositar()
+            contaBancaria.sacar()
+            contaBancaria.exibirSaldo()
+
+        </script>
+    </head>
+</html>

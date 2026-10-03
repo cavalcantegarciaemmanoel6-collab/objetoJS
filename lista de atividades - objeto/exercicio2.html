@@ -1,0 +1,37 @@
+<html lang="pt-br" dir="ltr">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <title>Exercício 2 - Objetos</title>
+        <script>
+
+            var produto = { 
+                nome: 0,
+                preco: 0,
+                quantidade: 0, 
+          
+                dadosProduto: function() {
+                    this.nome = prompt("Informe o nome do produto: ")
+                    this.preco = Number(prompt("Informe o preço do produto: "))
+                    this.quantidade = Number(prompt("Informe a quantidade adquirida do produto: "))
+                },
+
+                calcularCompra: function() {
+                    totalCompra = this.preco * this.quantidade
+                },
+
+                exibirResultado: function() {
+                    console.log("Produto: " + produto.nome)
+                    console.log("Preco: " + produto.preco)
+                    console.log("Quantidade: " + produto.quantidade)
+                    console.log("Valor total da compra: " + this.totalCompra)
+                }
+            }
+
+            produto.dadosProduto()
+            produto.calcularCompra()
+            produto.exibirResultado()
+
+        </script>
+    </head>
+</html>

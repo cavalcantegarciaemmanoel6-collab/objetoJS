@@ -1,0 +1,47 @@
+<html lang="pt-br" dir="ltr">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <title>Exercício 11 - Objetos</title>
+        <script>
+
+            var carrinho = {
+                nomeProduto: 0,
+                preco: 0,
+                quantidade: 0,
+                porcentagemDesconto: 0,
+
+                solicitarDados: function() {
+                    this.nomeProduto = prompt("Informe o nome do produto: ")
+                    this.preco = Number(prompt("Informe o preço do produto: "))
+                    this.quantidade = Number(prompt("Informe a quantidade: "))
+                    this.porcentagemDesconto = Number(prompt("Informe a porcentagem de desconto: "))
+                },
+
+                calcularSubtotal: function() {
+                    subtotal = this.preco * this.quantidade
+                },
+
+                aplicarDesconto: function() {
+                    desconto = (subtotal * this.porcentagemDesconto) / 100
+                    valorFinal = subtotal - desconto
+                },
+
+                infosOrganizadas: function() {
+                    console.log("Produto: " + this.nomeProduto)
+                    console.log("Preço: " + this.preco)
+                    console.log("Quantidade: " + this.quantidade)
+                    console.log("Subtotal: " + subtotal)
+                    console.log("Desconto: " + this.porcentagemDesconto + "%")
+                    console.log("Valor final: " + valorFinal)
+                }
+            }
+
+            carrinho.solicitarDados()
+            carrinho.calcularSubtotal()
+            carrinho.aplicarDesconto()
+            carrinho.infosOrganizadas()
+
+        </script>
+    </head>
+</html>

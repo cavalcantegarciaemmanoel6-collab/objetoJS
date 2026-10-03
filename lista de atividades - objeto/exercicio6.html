@@ -1,0 +1,38 @@
+<html lang="pt-br" dir="ltr">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <title>Exercício 6 - Objetos</title>
+        <script>
+
+                var funcionario = { 
+                nome: 0,
+                salario: 0,
+                porcentagemAumento: 0,
+
+            solicitarDados: function() {
+                this.nome = prompt("Informe o seu nome: ")
+                this.salario = Number(prompt("Informe o salário: "))
+                this.porcentagemAumento = Number(prompt("Informe a porcentagem de aumento: "))
+                },
+
+            aumentoSalarial: function() {
+                porcentagem = (this.salario * this.porcentagemAumento) / 100
+                novoSalario = this.salario + porcentagem
+            },
+
+            infosOrganizadas: function() {
+                    console.log("Nome: " + this.nome)
+                    console.log("Salário: " + this.salario)
+                    console.log("Porcentagem de aumento: " + this.porcentagemAumento)
+                    console.log("Novo salário: " + novoSalario)
+                }
+        }
+
+        funcionario.solicitarDados()
+        funcionario.aumentoSalarial()
+        funcionario.infosOrganizadas()
+
+        </script>
+    </head>
+</html>

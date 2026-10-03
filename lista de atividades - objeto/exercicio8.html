@@ -1,0 +1,47 @@
+<html lang="pt-br" dir="ltr">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <title>Exercício 8 - Objetos</title>
+        <script>
+
+            var personagem = {
+                nome: 0,
+                vida: 0,
+                forcaAtaque: 0,
+
+                solicitarDados: function() {
+                    this.nome = prompt("Informe o nome do personagem: ")
+                    this.vida = Number(prompt("Informe a quantidade de vida: "))
+                    this.forcaAtaque = Number(prompt("Informe a força de ataque: "))
+                },
+
+                atacar: function() {
+                    console.log(this.nome + " atacou com força " + this.forcaAtaque)
+                },
+
+                receberDano: function() {
+                    dano = Number(prompt("Informe a quantidade de dano recebido: "))
+
+                    this.vida = this.vida - dano
+
+                    if (this.vida < 0) {
+                        this.vida = 0
+                    }
+                },
+
+                infosOrganizadas: function() {
+                    console.log("Nome: " + this.nome)
+                    console.log("Vida: " + this.vida)
+                    console.log("Força de ataque: " + this.forcaAtaque)
+                }
+            }
+
+            personagem.solicitarDados()
+            personagem.atacar()
+            personagem.receberDano()
+            personagem.infosOrganizadas()
+
+        </script>
+    </head>
+</html>

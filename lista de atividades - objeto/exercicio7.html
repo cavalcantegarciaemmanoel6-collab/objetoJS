@@ -1,0 +1,43 @@
+<html lang="pt-br" dir="ltr">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <title>Exercício 7 - Objetos</title>
+        <script>
+
+            var pedido = {
+                nomeCliente: 0,
+                valorRefeicao: 0,
+                porcentagemTaxa: 0,
+
+                solicitarDados: function() {
+                    this.nomeCliente = prompt("Informe o nome do cliente: ")
+                    this.valorRefeicao = Number(prompt("Informe o valor da refeição: "))
+                    this.porcentagemTaxa = Number(prompt("Informe a porcentagem da taxa de serviço: "))
+                },
+
+                calcularTaxa: function() {
+                    taxa = (this.valorRefeicao * this.porcentagemTaxa) / 100
+                },
+
+                calcularTotal: function() {
+                    valorTotal = this.valorRefeicao + taxa
+                },
+
+                infosOrganizadas: function() {
+                    console.log("Nome do cliente: " + this.nomeCliente)
+                    console.log("Valor da refeição: " + this.valorRefeicao)
+                    console.log("Porcentagem da taxa: " + this.porcentagemTaxa)
+                    console.log("Valor da taxa: " + taxa)
+                    console.log("Valor total: " + valorTotal)
+                }
+            }
+
+            pedido.solicitarDados()
+            pedido.calcularTaxa()
+            pedido.calcularTotal()
+            pedido.infosOrganizadas()
+
+        </script>
+    </head>
+</html>

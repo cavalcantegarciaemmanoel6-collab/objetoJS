@@ -1,0 +1,93 @@
+<html lang="pt-br" dir="ltr">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <title>Exercício 12 - Arrays</title>
+        <script>
+
+            var perfil = {
+                nomeUsuario: 0,
+                seguidores: [],
+                publicacoes: [],
+                curtidasTotais: 0,
+
+                publicar: function() {
+                    publicacao = prompt("Digite uma publicação: ")
+
+                    this.publicacoes.push({
+                        texto: publicacao,
+                        curtidas: 0
+                    })
+                },
+
+                excluirPublicacao: function() {
+                    indice = Number(prompt("Informe o número da publicação que deseja excluir: "))
+
+                    this.publicacoes.splice(indice, 1)
+                },
+
+                seguirPessoa: function() {
+                    nomePessoa = prompt("Informe o nome da pessoa que deseja seguir: ")
+
+                    this.seguidores.push(nomePessoa)
+                },
+
+                deixarDeSeguir: function() {
+                    nomePessoa = prompt("Informe o nome da pessoa que deseja deixar de seguir: ")
+
+                    indice = this.seguidores.indexOf(nomePessoa)
+
+                    if (indice != -1) {
+                        this.seguidores.splice(indice, 1)
+                    }
+                },
+
+                curtirPublicacao: function() {
+                    indice = Number(prompt("Informe o número da publicação que deseja curtir: "))
+
+                    if (this.publicacoes[indice]) {
+                        this.publicacoes[indice].curtidas++
+                        this.curtidasTotais++
+                    }
+                },
+
+                mostrarMaisCurtida: function() {
+                    if (this.publicacoes.length > 0) {
+                        maisCurtida = this.publicacoes[0]
+
+                        for (i = 1; i < this.publicacoes.length; i++) {
+                            if (this.publicacoes[i].curtidas > maisCurtida.curtidas) {
+                                maisCurtida = this.publicacoes[i]
+                            }
+                        }
+
+                        console.log("Publicação com mais curtidas: " + maisCurtida.texto)
+                        console.log("Curtidas: " + maisCurtida.curtidas)
+                    }
+                },
+
+                infosOrganizadas: function() {
+                    console.log("Usuário: " + this.nomeUsuario)
+                    console.log("Seguidores: " + this.seguidores)
+                    console.log("Publicações: " + this.publicacoes.length)
+                    console.log("Curtidas totais: " + this.curtidasTotais)
+                }
+            }
+
+            perfil.nomeUsuario = prompt("Informe o nome de usuário: ")
+
+            perfil.publicar()
+            perfil.publicar()
+
+            perfil.seguirPessoa()
+            perfil.seguirPessoa()
+
+            perfil.curtirPublicacao()
+            perfil.curtirPublicacao()
+
+            perfil.mostrarMaisCurtida()
+            perfil.infosOrganizadas()
+
+        </script>
+    </head>
+</html>

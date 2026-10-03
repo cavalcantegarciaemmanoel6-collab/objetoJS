@@ -1,0 +1,50 @@
+<html lang="pt-br" dir="ltr">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <title>Exercício 4 - Objetos</title>
+        <script>
+
+            calculo = 0
+
+            var pessoa = { 
+                nome: 0,
+                anoNascimento: 0,
+                anoAtual: 0,
+
+            solicitarDados: function() {
+                this.nome = prompt("Informe o seu nome: ")
+                this.anoNascimento = Number(prompt("Informe o seu ano de nascimento: "))
+                this.anoAtual = Number(prompt("Informe o ano atual: "))
+                },
+
+            Idade: function() {
+                resultado = this.anoAtual - this.anoNascimento
+                idadee = resultado
+            },
+
+            verificadorIdade : function() {
+                if (calculo >= 18) {
+                    console.log("Você é maior de idade! Tem " + idadee + " anos.")
+                } 
+                else {
+                    console.log("Você é menor de idade... Tem " + idadee + " anos.")
+                }
+            },
+
+            infosOrganizadas: function() {
+                    console.log("Nome: " + this.nome)
+                    console.log("Ano de nascimento: " + this.anoNascimento)
+                    console.log("Ano Atual: " + this.anoAtual)
+                    console.log("Idade: " + idadee)
+                }
+        }
+
+        pessoa.solicitarDados()
+        pessoa.Idade()
+        pessoa.verificadorIdade()
+        pessoa.infosOrganizadas()
+
+        </script>
+    </head>
+</html>

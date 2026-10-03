@@ -1,0 +1,49 @@
+<html lang="pt-br" dir="ltr">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <title>Exercício 10 - Objetos</title>
+        <script>
+
+            var filme = {
+                titulo: 0,
+                duracao: 0,
+                classificacao: 0,
+
+                solicitarDados: function() {
+                    this.titulo = prompt("Informe o título do filme: ")
+                    this.duracao = Number(prompt("Informe a duração do filme em minutos: "))
+                    this.classificacao = Number(prompt("Informe a classificação indicativa: "))
+                },
+
+                converterDuracao: function() {
+                    horas = Math.floor(this.duracao / 60)
+                    minutos = this.duracao % 60
+                },
+
+                verificarIdade: function() {
+                    idade = Number(prompt("Informe a sua idade: "))
+
+                    if (idade >= this.classificacao) {
+                        podeAssistir = "Pode assistir ao filme."
+                    } else {
+                        podeAssistir = "Não pode assistir ao filme."
+                    }
+                },
+
+                infosOrganizadas: function() {
+                    console.log("Título: " + this.titulo)
+                    console.log("Duração: " + horas + " hora(s) e " + minutos + " minuto(s)")
+                    console.log("Classificação: " + this.classificacao)
+                    console.log(podeAssistir)
+                }
+            }
+
+            filme.solicitarDados()
+            filme.converterDuracao()
+            filme.verificarIdade()
+            filme.infosOrganizadas()
+
+        </script>
+    </head>
+</html>
